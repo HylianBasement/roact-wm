@@ -1,0 +1,33 @@
+{
+  "name": "@rbxts/roact-wm",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/init.lua",
+  "types": "src/index.d.ts",
+  "scripts": {},
+  "keywords": [
+    "Roact",
+    "Roblox"
+  ],
+  "author": "Rimuy",
+  "license": "MIT",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HylianBasement/roact-wm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HylianBasement/roact-wm/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rbxts/compiler-types": "^1.2.3-types.0",
+    "@rbxts/roact": "^1.4.0-ts.2",
+    "@rbxts/types": "^1.0.525"
+  }
+}
