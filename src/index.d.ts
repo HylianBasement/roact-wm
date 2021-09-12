@@ -31,8 +31,8 @@ declare namespace RoactWM {
 // History
 declare namespace RoactWM {
         export interface History {
-                from(history: HistoryId): HistoryId;
-                get(): HistoryId;
+                from(history: History): History;
+                get(): Array<HistoryId>;
                 set(newHistory: Array<HistoryId>): void;
                 has(value: HistoryId): boolean;
                 push(value: HistoryId): void;
