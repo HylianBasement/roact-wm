@@ -1,6 +1,10 @@
 <div align="center">
 	<img src="https://i.imgur.com/ngBo28Q.png"></img>
         <h1>Roact Window Manager</h1>
+	<a href="https://www.npmjs.com/package/@rbxts/roact-wm">
+		<img src="https://badge.fury.io/js/%40rbxts%2Froact-wm.svg"></img>
+	</a>
+	<br/>
         Experimental simple window management library for Roact.
 </div>
 
@@ -41,8 +45,8 @@ end
 
 `Controller`
 ```lua
-InputService.InputBegan:Connect(function(input)
-	RoactWM.Adapter(function(history)
+RoactWM.Adapter(function(history)
+	InputService.InputBegan:Connect(function(input)
 		if input.KeyCode == Enum.KeyCode.One then
 			history:push("ExampleWindow")
 		elseif input.KeyCode == Enum.KeyCode.Two then
