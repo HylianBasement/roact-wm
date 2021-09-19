@@ -1,8 +1,8 @@
 {
   "name": "@rbxts/roact-wm",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
-  "main": "src/init.lua",
+  "main": "src/ts.lua",
   "types": "src/index.d.ts",
   "scripts": {},
   "keywords": [
