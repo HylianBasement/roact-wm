@@ -22,6 +22,7 @@ declare namespace RoactWM {
                 OnClosed?: (history: History) => void;
                 OnFocused?: (history: History) => void;
                 OnFocusReleased?: (history: History) => void;
+                FocusGui?: Roact.Ref<GuiObject>;
         }
 
         export type Window = Roact.ComponentConstructor<WindowProperties>;
