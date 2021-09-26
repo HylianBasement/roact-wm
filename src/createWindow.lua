@@ -108,10 +108,8 @@ local function createWindow(roactSource, history)
                 local extraChildren = {}
 
                 if windowProps.FocusGui then
-                        assert(typeof(windowProps.FocusGui) == "Instance")
-
                         extraChildren["FocusArea"] = e(Roact.Portal, {
-                                target = windowProps.FocusGui,
+                                target = windowProps.FocusGui:getValue(),
                         }, {
                                 FocusArea = e(Modal)
                         })
