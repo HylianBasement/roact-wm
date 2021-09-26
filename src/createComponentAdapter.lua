@@ -1,7 +1,7 @@
 
 local function createComponentAdapter(roactSource, history)
         local Roact = require(roactSource)
-        local Adapter = Roact.Component:extend("AdapterComponent")
+        local Adapter = Roact.Component:extend("ComponentAdapter")
 
         function Adapter:init()
                 assert(

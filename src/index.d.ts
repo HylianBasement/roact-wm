@@ -16,7 +16,7 @@ declare namespace RoactWM {
 
 // Window
 declare namespace RoactWM {
-        export interface WindowProperties extends Roact.JsxInstanceProperties<Frame> {
+        export interface WindowProperties extends Roact.JsxInstance<Frame> {
                 Id: HistoryId;
                 OnOpen?: (history: History) => void;
                 OnClosed?: (history: History) => void;

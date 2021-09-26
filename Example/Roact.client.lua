@@ -30,7 +30,7 @@ local function Button(props)
 end
 
 local UI = e("ScreenGui", {}, {
-	Buttons = e(RoactWM.AdapterComponent, {
+	Buttons = e(RoactWM.ComponentAdapter, {
 		render = function(history)
 			return e("Frame", {
 				BackgroundTransparency = 1,

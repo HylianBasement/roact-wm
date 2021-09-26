@@ -1,5 +1,6 @@
 local None = require(script.Parent.None)
 local merge = require(script.Parent.merge)
+local copy = require(script.Parent.copy)
 
 local windowPropsFilter = {
         Id = None,
@@ -20,7 +21,6 @@ local function createWindow(roactSource, history)
                         type(self.props.Id) == "string" or type(self.props.Id) == "number",
                         "You must provide a valid Id property."
                 )
-                self.ref = Roact.createRef()
                 self.id = self.props.Id
         end
 
@@ -78,9 +78,7 @@ local function createWindow(roactSource, history)
                         end)
                 end
 
-                local frameProps = merge(props, {
-                        [Roact.Ref] = self.ref,
-                })
+                local frameProps = copy(props)
 
                 local screenGuiProps = {
                         DisplayOrder = 50 + history:index(id),
@@ -115,14 +113,10 @@ local function createWindow(roactSource, history)
                         extraChildren["FocusArea"] = e(Roact.Portal, {
                                 target = windowProps.FocusGui,
                         }, {
-                                FocusArea = e(Modal, {
-                                        [Roact.Ref] = self.ref
-                                })
+                                FocusArea = e(Modal)
                         })
                 else
-                        extraChildren["FocusArea"] = e(Modal, {
-                                [Roact.Ref] = self.ref
-                        })
+                        extraChildren["FocusArea"] = e(Modal)
                 end
 
                 local newChildren = merge(children, extraChildren)
