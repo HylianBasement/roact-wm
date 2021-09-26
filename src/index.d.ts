@@ -18,6 +18,7 @@ declare namespace RoactWM {
 declare namespace RoactWM {
         export interface WindowProperties extends Roact.JsxInstance<Frame> {
                 Id: HistoryId;
+                ModalEnabled?: boolean;
                 OnOpen?: (history: History) => void;
                 OnClosed?: (history: History) => void;
                 OnFocused?: (history: History) => void;

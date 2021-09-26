@@ -4,6 +4,7 @@ local copy = require(script.Parent.copy)
 
 local windowPropsFilter = {
         Id = None,
+        ModalEnabled = None,
         OnOpen = None,
         OnClosed = None,
         OnFocused = None,
@@ -107,14 +108,16 @@ local function createWindow(roactSource, history)
 
                 local extraChildren = {}
 
-                if windowProps.FocusGui then
-                        extraChildren["FocusArea"] = e(Roact.Portal, {
-                                target = windowProps.FocusGui:getValue(),
-                        }, {
-                                FocusArea = e(Modal)
-                        })
-                else
-                        extraChildren["FocusArea"] = e(Modal)
+                if windowProps.ModalEnabled == true then
+                        if windowProps.FocusGui then
+                                extraChildren["FocusArea"] = e(Roact.Portal, {
+                                        target = windowProps.FocusGui:getValue(),
+                                }, {
+                                        FocusArea = e(Modal)
+                                })
+                        else
+                                extraChildren["FocusArea"] = e(Modal)
+                        end
                 end
 
                 local newChildren = merge(children, extraChildren)
