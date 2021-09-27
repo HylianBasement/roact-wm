@@ -9,7 +9,7 @@ local function createSource(roactSource)
 
         return {
                 Adapter = createAdapter(history),
-                AdapterComponent = createComponentAdapter(roactSource, history),
+                ComponentAdapter = createComponentAdapter(roactSource, history),
                 Window = createWindow(roactSource, history),
         }
 end
