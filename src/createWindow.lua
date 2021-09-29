@@ -83,7 +83,6 @@ local function createWindow(roactSource, history)
 
                 local screenGuiProps = {
                         DisplayOrder = 50 + history:index(id),
-                        Enabled = self.state.isOpen,
                 }
 
                 for k, v in pairs(props) do
@@ -125,8 +124,10 @@ local function createWindow(roactSource, history)
                         [Roact.Children] = newChildren
                 })
 
-                return e("ScreenGui", screenGuiProps, {
-                        Frame = e("Frame", fullProps)
+                return Roact.createFragment({
+                        [id] = self.state.isOpen and e("ScreenGui", screenGuiProps, {
+                                Frame = e("Frame", fullProps)
+                        })
                 })
         end
 
